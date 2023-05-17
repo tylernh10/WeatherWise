@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeatherWise</string>
+    <string name="planning_the_day">Planning your day for: %1$s</string>
+    <string name="planning_the_day_default">Planning your day for: --</string>
+    <string name="temperature">%1$d °F</string>
+    <string name="temperature_default">-- °F</string>
+    <string name="precip_default">--% chance of precip</string>
+    <string name="precip_percent">%1$d%% chance of precip</string>
+    <string name="humid_default">--% humidity</string>
+    <string name="humid_percent">%1$d%% humidity</string>
+    <string name="generic_default">--</string>
+    <string name="welcome">Hello! Let\'s plan your day.</string>
+    <string name="clear_search">Clear search</string>
+    <string name="search">Search</string>
+</resources>

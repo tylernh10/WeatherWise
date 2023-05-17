@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/welcome_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="20sp"
+        android:textAppearance="?textAppearanceHeadline4"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/planning_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/planning_the_day_default"
+        android:textAppearance="?textAppearanceHeadline6"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_tv" />
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAppearance="?textAppearanceHeadline4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planning_tv"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        tools:text="Today's weather will be sunny." />
+
+    <TextView
+        android:id="@+id/temp_tv"
+        style="@style/CardStyle"
+        android:textSize="32sp"
+        android:text="@string/temperature_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/conditions_tv"
+        app:layout_constraintTop_toBottomOf="@id/desc_tv"
+        tools:text="64 °F" />
+
+    <TextView
+        android:id="@+id/conditions_tv"
+        style="@style/CardStyle"
+        android:text="@string/generic_default"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/temp_tv"
+        app:layout_constraintTop_toTopOf="@id/temp_tv"
+        app:layout_constraintBottom_toBottomOf="@id/temp_tv"
+        tools:text="Cloudy conditions expected. Cloudy conditions expected.Cloudy conditions expected." />
+
+    <TextView
+        android:id="@+id/precipitation_tv"
+        style="@style/CardStyle"
+        android:text="@string/precip_default"
+        app:layout_constraintTop_toBottomOf="@id/temp_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/humidity_tv"/>
+
+    <TextView
+        android:id="@+id/humidity_tv"
+        style="@style/CardStyle"
+        android:text="@string/humid_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/precipitation_tv"
+        app:layout_constraintTop_toTopOf="@id/precipitation_tv"
+        app:layout_constraintBottom_toBottomOf="@id/precipitation_tv"/>
+
+    <TextView
+        android:textSize="20sp"
+        android:textAppearance="?textAppearanceHeadline4"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Places nearby"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/places_view"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/places_view"
+        style="@style/CardStyle"
+        android:text="--"
+        android:layout_height="wrap_content"
+        android:maxHeight="1000dp"
+        app:layout_constraintTop_toBottomOf="@id/humidity_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/parks_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/rounded_corner_button"
+            android:src="@drawable/park_ic"/>
+
+        <ImageView
+            android:id="@+id/museums_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/parks_iv"
+            app:layout_constraintEnd_toStartOf="@id/restaurants_iv"
+            android:src="@drawable/museum_ic"/>
+
+        <ImageView
+            android:id="@+id/restaurants_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/restaurant_ic"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/parks_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            android:textAppearance="?textAppearanceHeadline4"
+            android:padding="10dp"
+            android:text="--"
+            android:layout_marginTop="10dp"
+            tools:text="Da Vinci's Pizzeria"
+            />
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16sp"
+            android:textAppearance="?textAppearanceHeadline4"
+            android:padding="10dp"
+            android:text="--"
+            tools:text="127 Deepwood Drive, Avon CT, 06001"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
