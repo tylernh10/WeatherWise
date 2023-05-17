@@ -9,3 +9,5 @@ The purpose of the app is that users can use the weather info to determine what 
 Please note: you will need both a valid Visual Crossing API key as well as a valid Google Places API key in order for this app to function correctly. Both of these APIs are free.
 
 Furthermore: this is not the original GitHub repository, so the history is not identical to the original repo. This is due to the fact that the original repo had API keys in the commit history, so in order to avoid any security risks, the repository was completely restarted. Further improvements may be made in order to improve things such as the UI.
+
+<img src="weatherwise-ss.png" alt="image of WeatherWise app" width="280"/>
